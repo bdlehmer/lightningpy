@@ -30,7 +30,7 @@ Currently, `lightning.py` is not available on [PyPI](https://pypi.org/) or [cond
 Until it is uploaded, `lightning.py` and its dependencies can be installed by cloning the repo, creating a conda environment with the required dependencies, and then installing the package:
 
 ```sh
-git clone https://github.com/ebmonson/lightningpy.git
+git clone https://github.com/bdlehmer/lightningpy.git
 cd lightningpy
 conda env create -f environment.yml
 conda activate lightning
@@ -66,23 +66,49 @@ and a compiled PDF version of the documentation is available [in this repository
 ---
 A paper describing `lightning.py` in application is forthcoming by Monson et al.; this page will be updated on submission.
 
-In the meantime, work using the new PEGASE+Cloudy and BPASS+Cloudy models are encouraged to also cite [Lehmer et al. (2024, in press at ApJS)](https://ui.adsabs.harvard.edu/abs/2024arXiv241019901L/abstract):
+In the meantime, work using the new PEGASE+Cloudy and BPASS+Cloudy models are encouraged to also cite [Monson et al. (2026;ApJ)](https://ui.adsabs.harvard.edu/abs/2026ApJ..1001...42M/abstract):
+
+```
+@ARTICLE{2026ApJ..1001...42M,
+       author = {{Monson}, Erik B. and {Lehmer}, Bret D. and {Amiri}, Amirnezam and {Barboza}, Karina and {Barnes}, Ashley T. and {Basu-Zych}, Antara R. and {Dale}, Daniel A. and {Das}, Sanskriti and {Dlamini}, Simthembile and {Glover}, Simon and {Kreckel}, Kathryn and {Lopez}, Laura A. and {Lopez}, Sebastian and {Mathur}, Smita and {Pan}, Hsi-An and {Rodriguez}, Jennifer A. and {Sandstrom}, Karin and {Sarbadhicary}, Sumit K. and {Sun}, Jiayi and {Williams}, Thomas G.},
+        title = "{Constraining the Subgalactic Relationship between Star Formation and the Hot Interstellar Medium in NGC 4254}",
+      journal = {\apj},
+     keywords = {Interstellar medium, X-ray astronomy, Disk galaxies, 847, 1810, 391, Astrophysics of Galaxies},
+         year = 2026,
+        month = apr,
+       volume = {1001},
+       number = {1},
+          eid = {42},
+        pages = {42},
+          doi = {10.3847/1538-4357/ae4ecb},
+archivePrefix = {arXiv},
+       eprint = {2602.20397},
+ primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2026ApJ..1001...42M},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+```
+
+and [Lehmer et al. (2024, ApJS)](https://ui.adsabs.harvard.edu/abs/2024ApJ...977..189L/abstract):
 
 ```bibtex
-@ARTICLE{2024arXiv241019901L,
-    author = {{Lehmer}, Bret D. and {Monson}, Erik B. and {Eufrasio}, Rafael T. and {Amiri}, Amirnezam and {Doore}, Keith and {Basu-Zych}, Antara and {Garofali}, Kristen and {Oskinova}, Lidia and {Andrews}, Jeff J. and {Antoniou}, Vallia and {Geda}, Robel and {Greene}, Jenny E. and {Kovlakas}, Konstantinos and {Lazzarini}, Margaret and {Richardson}, Chris T.},
-    title = "{An Empirical Framework Characterizing the Metallicity and Star-Formation History Dependence of X-ray Binary Population Formation and Emission in Galaxies}",
-    journal = {arXiv e-prints},
-    keywords = {Astrophysics - Astrophysics of Galaxies, Astrophysics - High Energy Astrophysical Phenomena},
-    year = 2024,
-    month = oct,
-    eid = {arXiv:2410.19901},
-    pages = {arXiv:2410.19901},
-    archivePrefix = {arXiv},
-    eprint = {2410.19901},
-    primaryClass = {astro-ph.GA},
-    adsurl = {https://ui.adsabs.harvard.edu/abs/2024arXiv241019901L},
-    adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+@ARTICLE{2024ApJ...977..189L,
+       author = {{Lehmer}, Bret D. and {Monson}, Erik B. and {Eufrasio}, Rafael T. and {Amiri}, Amirnezam and {Doore}, Keith and {Basu-Zych}, Antara and {Garofali}, Kristen and {Oskinova}, Lidia and {Andrews}, Jeff J. and {Antoniou}, Vallia and {Geda}, Robel and {Greene}, Jenny E. and {Kovlakas}, Konstantinos and {Lazzarini}, Margaret and {Richardson}, Chris T.},
+        title = "{An Empirical Framework Characterizing the Metallicity and Star-formation History Dependence of X-Ray Binary Population Formation and Emission in Galaxies}",
+      journal = {\apj},
+     keywords = {X-ray binary stars, Stellar evolutionary models, Galaxy evolution, Star formation, Spectral energy distribution, X-ray astronomy, 1811, 2046, 594, 1569, 2129, 1810, Astrophysics - Astrophysics of Galaxies, Astrophysics - High Energy Astrophysical Phenomena},
+         year = 2024,
+        month = dec,
+       volume = {977},
+       number = {2},
+          eid = {189},
+        pages = {189},
+          doi = {10.3847/1538-4357/ad8de7},
+archivePrefix = {arXiv},
+       eprint = {2410.19901},
+ primaryClass = {astro-ph.GA},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2024ApJ...977..189L},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 ```
 
