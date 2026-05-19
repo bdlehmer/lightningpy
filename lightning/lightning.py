@@ -34,7 +34,7 @@ from astropy.io import ascii
 # Lightning
 from .sfh import PiecewiseConstSFH, DelayedExponentialSFH, SingleExponentialSFH
 #from .sfh.delayed_exponential import
-from .stellar import PEGASEModel, PEGASEModelA24, PEGASEBurstA24, BPASSModel, BPASSModelA24, BPASSBurstA24
+from .stellar import PEGASEModel, PEGASEModelA24, PEGASEBurstA24, BPASSModel, BPASSModelA24, BPASSBurstA24, POSYDON
 from .dust import DL07Dust as DustModel # Move inside setup function where needed?
 from .agn import AGNModel # Move inside setup function where needed?
 from .xray import StellarPlaw, AGNPlaw, Qsosed
@@ -430,7 +430,7 @@ class Lightning:
                 self.Nages = len(self.ages)
 
         self.nebula_dust = nebula_dust
-        allowed_stars = ['PEGASE', 'PEGASE-A24', 'BPASS', 'BPASS-A24', 'BPASS-ULX-G24']
+        allowed_stars = ['PEGASE', 'PEGASE-A24', 'BPASS', 'BPASS-A24', 'BPASS-ULX-G24','POSYDON']
         if stellar_type not in allowed_stars:
             print('Allowed simple stellar population models are:', allowed_stars)
             raise ValueError("Stellar type '%s' not understood." % (stellar_type))
@@ -735,10 +735,20 @@ class Lightning:
         if (self.SFH_type == 'Burst') and ('A24' not in self.stellar_type):
             raise ValueError("Burst models only available for the 'A24' model set.")
 
+
         if (self.stellar_type == 'PEGASE'):
             self.stars = PEGASEModel(self.filter_labels, self.redshift, age=self.ages,
                                      step=step, cosmology=self.cosmology,
                                      wave_grid=self.wave_grid_rest)
+
+        elif (self.stellar_type == 'POSYDON'):
+            self.stars = POSYDON(self.filter_labels, self.redshift, age=self.ages,
+                                        cosmology=self.cosmology,
+                                        lognH=nebula_lognH,
+                                        wave_grid=self.wave_grid_rest,
+                                        dust_grains=self.nebula_dust,
+                                        line_labels=self.line_labels)
+
         elif (self.stellar_type == 'PEGASE-A24'):
             if self.SFH_type == 'Burst':
                 self.stars = PEGASEBurstA24(self.filter_labels, self.redshift, age=self.ages,

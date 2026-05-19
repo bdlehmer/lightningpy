@@ -24,6 +24,9 @@ tests/*.h5
 tests/tests.err
 tests/tests.out
 
+
+POSYDON_fullgrid_g_binary.h5
+POSYDON_fullgrid_g_single.h5
 BPASS_imf135_300.tar.gz
 BPASS_imf135_300*
 BPASS_imf_chab300_fullgrid_ng.h5*
