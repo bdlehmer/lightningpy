@@ -1,3 +1,64 @@
+Metadata-Version: 2.4
+Name: lightningpy
+Version: 0.0.0
+Summary: Lightning SED fitting code.
+Maintainer-email: Erik Monson <eqm5663@psu.edu>, Rafael Eufrasio <eufrasio@uark.edu>, Keith Doore <kjdoore@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2023 Erik B. Monson
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Documentation, https://github.com/ebmonson/lightningpy#readme
+Project-URL: Issues, https://github.com/ebmonson/lightningpy/issues
+Project-URL: Source, https://github.com/ebmonson/lightningpy
+Project-URL: Repository, https://github.com/ebmonson/lightningpy.git
+Keywords: astronomy,SED fitting,Bayesian
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: astropy
+Requires-Dist: tqdm
+Requires-Dist: emcee
+Requires-Dist: h5py
+Requires-Dist: matplotlib
+Requires-Dist: corner
+Provides-Extra: dev
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: myst_parser; extra == "docs"
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: myst-nb; extra == "docs"
+Requires-Dist: sphinx_rtd_theme; extra == "docs"
+Requires-Dist: sphinx-autoapi; extra == "docs"
+Requires-Dist: coverage[toml]; extra == "docs"
+Requires-Dist: numpydoc; extra == "docs"
+Requires-Dist: nbsphinx; extra == "docs"
+Requires-Dist: sphinx-book-theme; extra == "docs"
+Dynamic: license-file
+
 # lightning.py
 
 [![Documentation Status](https://readthedocs.org/projects/lightningpy/badge/?version=latest)](https://lightningpy.readthedocs.io/en/latest/?badge=latest)
@@ -30,7 +91,7 @@ Currently, `lightning.py` is not available on [PyPI](https://pypi.org/) or [cond
 Until it is uploaded, `lightning.py` and its dependencies can be installed by cloning the repo, creating a conda environment with the required dependencies, and then installing the package:
 
 ```sh
-git clone https://github.com/ebmonson/lightningpy.git
+git clone https://github.com/bdlehmer/lightningpy.git
 cd lightningpy
 conda env create -f environment.yml
 conda activate lightning

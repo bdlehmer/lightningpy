@@ -1,6 +1,7 @@
 .DS_Store
 build
 plightning.egg-info
+lightningpy.egg-info
 
 __pycache__
 
