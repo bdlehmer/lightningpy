@@ -466,14 +466,16 @@ class Qsosed(XrayEmissionModel):
     # param_bounds = np.array([[1e5, 1e10],
     #                          [-1.5, 0.3]])
     param_names_fncy = [r'$\log M_{\rm SMBH}$', r'$\log \dot m$']
-    param_bounds = np.array([[5, 10],
+    param_bounds = np.array([[2, 10],
                              [-1.5, 0.3]])
 
     def _construct_model(self, wave_grid=None):
 
         self.modeldir = self.modeldir.joinpath('xray/')
 
-        with self.modeldir.joinpath('qsosed.fits.gz').open('rb') as f:
+        #with self.modeldir.joinpath('qsosed.fits.gz').open('rb') as f:
+        #    source_table = Table.read(f, format='fits')
+        with self.modeldir.joinpath('qsosed_grid_table.fits.gz').open('rb') as f:
             source_table = Table.read(f, format='fits')
 
         Nmass = source_table.meta['N_MASS']
@@ -675,8 +677,9 @@ class Qsosed(XrayEmissionModel):
 
         lnu_obs, _ = self.get_model_lnu_hires(params, exptau=exptau)
 
-        countrate = np.log10(1 / (4 * np.pi)) - 2 * np.log10(self._DL_cm) + \
-                    np.log10(lnu_obs) + np.log10(self.specresp) - np.log10(self.phot_energ)
+        with np.errstate(divide='ignore', invalid='ignore'):
+            countrate = np.log10(1 / (4 * np.pi)) - 2 * np.log10(self._DL_cm) + \
+                        np.log10(lnu_obs) + np.log10(self.specresp) - np.log10(self.phot_energ)
 
         countrate = 10 ** countrate
 
